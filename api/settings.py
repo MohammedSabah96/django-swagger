@@ -1,6 +1,8 @@
 from pathlib import Path
+from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-0os*&kxowv*4)gnt@zr4kwiig=&4brc4j6246vo(&%cm1o9^ri'
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 ALLOWED_HOSTS = []
 INSTALLED_APPS = [
