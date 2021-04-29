@@ -29,7 +29,7 @@ class UserAccountView(viewsets.ModelViewSet):
     permission_classes = [UserPermission]
 
     def get_queryset(self):
-        queryset = UserAccount.objects.all().select_related()
+        queryset = UserAccount.objects.all()
         return queryset
 
     @swagger_auto_schema(operation_id="Return all users")
@@ -53,5 +53,5 @@ class UserAccountView(viewsets.ModelViewSet):
         return super().update(request, *args, **kwargs)
 
     @swagger_auto_schema(operation_id="Remove an existing user")
-    def delete(self, request, *args, **kwargs):
-        return super().delete(request, *args, **kwargs)
+    def destroy(self, request, *args, **kwargs):
+        return super().destroy(request, *args, **kwargs)
